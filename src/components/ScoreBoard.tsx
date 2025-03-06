@@ -1,20 +1,20 @@
 import React from 'react';
 import { Trophy, User, Users } from 'lucide-react';
 
-interface ScoreBoardProps {
-  scores: {
+interface BoardProps {
+  s: {
     X: number;
     O: number;
     draws: number;
   };
 }
 
-const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
+const Board: React.FC<BoardProps> = ({ s }) => {
   return (
     <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
       <h2 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
         <Trophy className="h-5 w-5 text-yellow-500" />
-        Score Board
+         Board
       </h2>
       
       <div className="space-y-2">
@@ -23,7 +23,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
             <User className="h-4 w-4 text-indigo-600" />
             <span className="font-medium"></span>
           </div>
-          <span className="text-lg font-bold text-indigo-600">{scores.X}</span>
+          <span className="text-lg font-bold text-indigo-600">{s.X}</span>
         </div>
         
         <div className="flex justify-between items-center p-2 bg-purple-50 rounded">
@@ -31,7 +31,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
             <User className="h-4 w-4 text-purple-600" />
             <span className="font-medium">Appanna swamy</span>
           </div>
-          <span className="text-lg font-bold text-purple-600">{scores.O}</span>
+          <span className="text-lg font-bold text-purple-600">{s.O}</span>
         </div>
         
         <div className="flex justify-between items-center p-2 bg-gray-100 rounded">
@@ -39,11 +39,11 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
             <Users className="h-4 w-4 text-gray-600" />
             <span className="font-medium">Draws</span>
           </div>
-          <span className="text-lg font-bold text-gray-600">{scores.draws}</span>
+          <span className="text-lg font-bold text-gray-600">{s.draws}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default ScoreBoard;
+export default Board;
